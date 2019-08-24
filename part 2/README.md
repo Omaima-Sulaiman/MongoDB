@@ -3,8 +3,11 @@
 Note: Still need to fix the json file
 
 1. Write a MongoDB query to display all the documents in the collection restaurants.
+db.getCollection('restaurants').find()
+
 
 2. Write a MongoDB query to display the fields restaurant_id, name, borough and cuisine for all the documents in the collection restaurant.
+
 
 3. Write a MongoDB query to display the fields restaurant_id, name, borough and cuisine, but exclude the field \_id for all the documents in the collection restaurant.
 
@@ -17,8 +20,12 @@ Note: Still need to fix the json file
 7.Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx.
 
 8. Write a MongoDB query to find the restaurants who achieved a score more than 90.
+db.getCollection('restaurants').find({"grades.score": { $gt: 90 }})
 
 9. Write a MongoDB query to find the restaurants that achieved a score, more than 80 but less than 100.
+db.getCollection('restaurants').find( { $and: [ { pricezzz: { $ne: 1.99 } }, { price: { $exists: true } } ] } )
+//
+db.getCollection('restaurants').find({"grades.score": { $gt: 80 , $lt: 100 }})
 
 10. Write a MongoDB query to find the restaurants which locate in latitude value less than -95.754168.
 
